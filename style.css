@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --font-titles: 'Tomorrow', sans-serif;
+  --font-text: 'Tomorrow', sans-serif;
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-m: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-l: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+  --color-light: #c9a4d7;
+  --color-black: #010105;
+  --color-purple: #5249d1;
+  --color-lightpurple: #b9b5f7;
+  --color-grey: #8d82a023;
+  --color-white: #ffffff;
+  --color-button: #5249d1;
+
+  --gap-xl: 3rem;
+  --gap-l: 1.8rem;
+  --gap-m: 1.2rem;
+  --gap-s: 0.6rem;
+
+  --padding-xl: 3.7rem;
+  --padding-l: 1.8rem;
+  --padding-m: 1.2rem;
+  --padding-s: 0.6rem;
+
+  --margin-section: 8rem;
+
+  --radius-m: 0.3rem;
+  --radius-l: 0.9rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: var(--font-text);
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap-l);
+}
+
+.common-padding {
+  padding: var(--padding-l) var(--padding-xl);
+}
+
+#principal_header {
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--color-lightpurple);
+  background-image: url('https://transparenttextures.com/patterns/straws.png');
+  color: var(--color-purple);
+}
+
+#principal_header > h1 {
+  font-size: var(--font-size-l);
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  #principal_header {
+    padding: var(--gap-l);
+  }
+
+  #principal_header > nav {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #companies {
+    margin-top: 100px;
+  }
+  #testimonials > h2 {
+    font-size: var(--font-size-l);
+  }
+}
+
+#hero {
+  padding-top: 9rem;
+  gap: var(--gap-xl);
+  background-color: var(--color-white);
+}
+
+#hero > div {
+  flex-direction: column;
+  gap: var(--gap-l);
+  width: 25rem;
+  align-items: flex-start;
+}
+
+#hero > div > h2 {
+  font-size: var(--font-size-xxl);
+  color: var(--color-purple);
+  text-align: center;
+}
+#hero > div > p {
+  font-weight: bold;
+  text-align: justify;
+}
+
+@media (max-width: 1040px) {
+  #hero {
+    padding: var(--gap-l);
+    padding-top: 9rem;
+  }
+
+  #hero > div {
+    width: 19rem;
+    align-items: center;
+  }
+
+  #hero > div > h2 {
+    font-size: var(--font-size-l);
+    text-align: center;
+  }
+
+  #hero > div > p {
+    text-align: center;
+  }
+
+  #hero > img {
+    width: 20rem;
+  }
+}
+button {
+  padding: var(--padding-s) var(--padding-m);
+  border-radius: var(--radius-l);
+  font: var(--font-size-m);
+  font-weight: bold;
+  align-self: center;
+  box-shadow: 0 0 0 0.1em inset var(--color-button);
+  --_g: linear-gradient(var(--color-button) 0 0) no-repeat;
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p, 0%)) 0%,
+    var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  outline-offset: 0.1em;
+  transition: background-size 0.4s, background-position 0s 0.4s;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position 0.4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9Q inset #0009;
+  background-color: var(--color-button);
+  color: #fff;
+}
+
+@media (min-width: 1400px) {
+  #hero {
+    justify-content: space-around;
+  }
+}
+
+#companies {
+  flex-direction: column;
+  margin-top: var(--margin-section);
+  gap: var(--gap-m);
+}
+
+#companies > div {
+  width: 80%;
+  background-color: var(--color-grey);
+  border-radius: var(--radius-l);
+  justify-content: space-around;
+  max-width: 650px;
+  min-width: 350px;
+}
+
+#companies > h3 {
+  opacity: 0.5;
+  font-weight: 450;
+  color: var(--color-purple);
+  text-align: center;
+}
+
+#companies > div > img {
+  width: 20%;
+}
+
+#testimonials {
+  flex-direction: column;
+  margin-top: var(--margin-section);
+}
+
+#testimonials > h2 {
+  font-size: var(--font-size-l);
+  color: var(--color-purple);
+}
+
+.testimonial {
+  flex-direction: column;
+  width: 30%;
+  min-width: 300px;
+  border-radius: var(--radius-l);
+  background-color: var(--color-light);
+  padding: var(--padding-m);
+}
+
+.testimonial > img {
+  width: 200px;
+  border-radius: 100%;
+  border: 2px solid var(--color-purple);
+}
+#companies > h5,
+.testimonial > p {
+  font-weight: 400;
+  text-align: center;
+}
+
+#footer {
+  margin-top: var(--margin-section);
+  min-height: 30vh;
+  justify-content: space-around;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+  background-color: var(--color-lightpurple);
+  background-image: url('https://transparenttextures.com/patterns/straws.png');
+}
+
+#footer > ul {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+}
+
+#footer > ul > li:first-child {
+  font-weight: bolder;
+  font-size: var(--font-size-base);
+}
